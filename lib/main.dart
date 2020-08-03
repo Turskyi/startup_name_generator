@@ -33,17 +33,19 @@ class _RandomWordsState extends State<RandomWords> {
   }
 
   Widget _buildSuggestions() {
-    return ListView.builder(
+    return ListView.separated(
+      itemCount: 1000,
+      separatorBuilder: (context,index){
+        return Divider(
+          color: Colors.white,
+        );
+      },
         padding: EdgeInsets.all(16.0),
         itemBuilder:
             /*1
         The itemBuilder callback is called once per suggested word pairing, and
         places each suggestion into a ListTile row.*/
             (context, i) {
-          if (i.isOdd)
-            return Divider(
-              color: Colors.white,
-            );
           /*2
           dd a one-pixel-high divider widget before each row in the ListView.*/
 
